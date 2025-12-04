@@ -2,7 +2,7 @@ import Labs.*;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         Menu();
         System.out.println("Завершение программы...");
     }
@@ -18,14 +18,14 @@ public class Main {
                 0. Выход
                 """);
 
-            switch (InputRequest(choice)) {
+            switch (InputRequest()) {
                 case 2:
                     System.out.print("""
                         --------Сортировки--------
                         3. Сортировка структур
                         0. В главное меню
                         """);
-                    switch (InputRequest(choice)) {
+                    switch (InputRequest()) {
                         case 3:
                             System.out.println("--------Сортировка структур--------");
                             Lab_2_3.start();
@@ -43,7 +43,7 @@ public class Main {
                         2. Цифровая сортировка
                         0. В главное меню
                         """);
-                    switch (InputRequest(choice)) {
+                    switch (InputRequest()) {
                         case 2:
                             System.out.println("--------Цифровая сортировка--------");
                             Lab_3_2.start();
@@ -65,10 +65,10 @@ public class Main {
         } while (choice!=0);
     }
 
-    public static int InputRequest(int choice) {
+    public static int InputRequest() {
         System.out.print("Выберите пункт: ");
         Scanner sc = new Scanner(System.in);
-        choice = sc.nextInt();
+        int choice = sc.nextInt();
         return choice;
     }
 }
