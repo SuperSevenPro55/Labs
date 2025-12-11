@@ -15,7 +15,7 @@ public class Lab_3_2 {
         sorting<BigInteger> radix_sort = new RadixSort();
         radix_sort.sort(nums);
 
-
+        Output(nums);
     }
 
     public static void Input(List<BigInteger> nums) {
@@ -28,5 +28,9 @@ public class Lab_3_2 {
         }
     }
 
-
+    public static void Output(List<BigInteger> nums) {
+        for (BigInteger num : nums) {
+            System.out.println(num);
+        }
+    }
 }
