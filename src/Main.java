@@ -41,12 +41,17 @@ public class Main {
                     System.out.print("""
                         --------Сортировки 2--------
                         2. Цифровая сортировка
+                        3. Сохранение обобщения
                         0. В главное меню
                         """);
                     switch (InputRequest()) {
                         case 2:
                             System.out.println("--------Цифровая сортировка--------");
                             Lab_3_2.start();
+                            break;
+                        case 3:
+                            System.out.println("--------Сохранение обобщения--------");
+                            Lab_3_3.start();
                             break;
                         case 0:
                             break;
@@ -68,7 +73,6 @@ public class Main {
     public static int InputRequest() {
         System.out.print("Выберите пункт: ");
         Scanner sc = new Scanner(System.in);
-        int choice = sc.nextInt();
-        return choice;
+        return sc.nextInt();
     }
 }
