@@ -74,7 +74,7 @@ public class Main {
                             break;
                         case 2:
                             System.out.println("--------Очередь с приоритетом на основе Кучи--------");
-                            //Lab_4_2.start();
+                            // Lab_4_2.start();
                             break;
                         case 0:
                             break;
