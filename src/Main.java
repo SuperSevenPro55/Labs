@@ -1,13 +1,15 @@
 import Labs.*;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    static void main(String[] args) {
+    static void main(String[] args) throws IOException {
         Menu();
         System.out.println("Завершение программы...");
     }
 
-    public static void Menu() {
+    public static void Menu() throws IOException {
         int choice = -1;
 
         do {
