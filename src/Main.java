@@ -44,18 +44,16 @@ public class Main {
                         0. В главное меню
                         """);
                     switch (InputRequest()) {
-                        case 2:
+                        case 2 -> {
                             System.out.println("--------Цифровая сортировка--------");
                             Lab_3_2.start();
-                            break;
-                        case 3:
+                        }
+                        case 3 -> {
                             System.out.println("--------Сохранение обобщения--------");
                             Lab_3_3.start();
-                            break;
-                        case 0:
-                            break;
-                        default:
-                            System.out.println("Неверный ввод");
+                        }
+                        case 0 -> {}
+                        default -> System.out.println("Неверный ввод");
                     }
                 }
 
