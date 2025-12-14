@@ -1,7 +1,7 @@
 package Labs;
 
 import MinSearch.MinStack;
-import MinSearch.MinStackImpl;
+import Classes.MinStackImpl;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
