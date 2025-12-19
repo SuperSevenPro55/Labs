@@ -1,5 +1,6 @@
 package Labs;
 
+import java.util.Arrays;
 import java.util.Scanner;
 import static BinSearch.BinarySearch.binarySearch;
 
@@ -13,6 +14,7 @@ public class Lab_6_1 {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
+        Arrays.sort(arr);
         System.out.print("Введите число запросов: ");
         int m = sc.nextInt(); // Число запросов
 
