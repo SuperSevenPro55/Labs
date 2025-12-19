@@ -18,6 +18,7 @@ public class Main {
                 2. Сортировки
                 3. Сортировки 2
                 4. Поиск минимумов
+                6. Бинарный поиск
                 0. Выход
                 """);
 
@@ -74,6 +75,28 @@ public class Main {
                         case 2 -> {
                             System.out.println("--------Очередь с приоритетом на основе Кучи--------");
                             // Lab_4_2.start();
+                        }
+                        case 0 -> {}
+                        default -> System.out.println("Неверный ввод");
+                    }
+                }
+
+                case 6 -> {
+                    System.out.print("""
+                        --------Бинарный поиск--------
+                        1. Приближенный поиск
+                        2. Дипломы
+                        3.
+                        0. В главное меню
+                        """);
+                    switch (InputRequest()) {
+                        case 1 -> {
+                            System.out.println("--------Приближенный поиск--------");
+                            Lab_6_1.start();
+                        }
+                        case 2 -> {
+                            System.out.println("--------Сохранение обобщения--------");
+                            Lab_6_2.start();
                         }
                         case 0 -> {}
                         default -> System.out.println("Неверный ввод");
