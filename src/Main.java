@@ -127,7 +127,7 @@ public class Main {
                         }
                         case 3 -> {
                             System.out.println("--------Наибольшая общая подпоследовательность (НОП)--------");
-                            //Lab_7_3.start();
+                            Lab_7_3.start();
                         }
                         case 0 -> {}
                         default -> System.out.println("Неверный ввод");
