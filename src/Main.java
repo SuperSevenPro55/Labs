@@ -86,7 +86,7 @@ public class Main {
                         --------Бинарный поиск--------
                         1. Приближенный поиск
                         2. Дипломы
-                        3.
+                        3. Решение уравнения
                         0. В главное меню
                         """);
                     switch (InputRequest()) {
@@ -97,6 +97,10 @@ public class Main {
                         case 2 -> {
                             System.out.println("--------Сохранение обобщения--------");
                             Lab_6_2.start();
+                        }
+                        case 3 -> {
+                            System.out.println("--------Решение уравнения--------");
+                            Lab_6_3.start();
                         }
                         case 0 -> {}
                         default -> System.out.println("Неверный ввод");
