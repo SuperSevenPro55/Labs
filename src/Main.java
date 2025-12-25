@@ -1,21 +1,18 @@
 import Labs.*;
 
-import java.io.IOException;
-import java.util.Scanner;
+void main() {
+    Menu();
+    IO.println("Завершение программы...");
+}
 
-public class Main {
-    static void main(String[] args) throws IOException {
-        Menu();
-        System.out.println("Завершение программы...");
-    }
+public static void Menu() {
+    int choice = -1;
+    Scanner sc = new Scanner(System.in);
 
-    public static void Menu() throws IOException {
-        int choice = -1;
-        Scanner sc = new Scanner(System.in);
-
-        do {
-            System.out.print("""
+    do {
+        IO.print("""
                 --------Главное меню--------
+                1. База
                 2. Сортировки
                 3. Сортировки 2
                 4. Поиск минимумов
@@ -24,125 +21,166 @@ public class Main {
                 0. Выход
                 """);
 
-            switch (InputRequest(sc)) {
-                case 2 -> {
-                    System.out.print("""
+        switch (InputRequest(sc)) {
+            case 1 -> {
+                IO.print("""
+                        --------База--------
+                        1. Проверка скобок
+                        2. Удалить на месте
+                        0. В главное меню
+                        """);
+                switch (InputRequest(sc)) {
+                    case 1 -> {
+                        IO.println("--------Проверка скобок--------");
+                        Lab_1_1.start();
+                    }
+                    case 2 -> {
+                        IO.println("--------Удалить на месте--------");
+                        Lab_1_2.start();
+                    }
+                    case 0 -> {
+                    }
+                    default -> IO.println("Неверный ввод");
+                }
+            }
+
+            case 2 -> {
+                IO.print("""
                         --------Сортировки--------
+                        1. Сортировка вставками
+                        2. Сортировка слиянием
                         3. Сортировка структур
                         0. В главное меню
                         """);
-                    switch (InputRequest(sc)) {
-                        case 3 -> {
-                            System.out.println("--------Сортировка структур--------");
-                            Lab_2_3.start();
-                        }
-                        case 0 -> {}
-                        default -> System.out.println("Неверный ввод");
+                switch (InputRequest(sc)) {
+                    case 1 -> {
+                        IO.println("--------Сортировка вставками--------");
+                        Lab_2_1.start();
                     }
+                    case 2 -> {
+                        IO.println("--------Сортировка слиянием--------");
+                        Lab_2_2.start();
+                    }
+                    case 3 -> {
+                        IO.println("--------Сортировка структур--------");
+                        Lab_2_3.start();
+                    }
+                    case 0 -> {
+                    }
+                    default -> IO.println("Неверный ввод");
                 }
+            }
 
-                case 3 -> {
-                    System.out.print("""
+            case 3 -> {
+                IO.print("""
                         --------Сортировки 2--------
+                        1. Сортировка подсчетом
                         2. Цифровая сортировка
                         3. Сохранение обобщения
                         0. В главное меню
                         """);
-                    switch (InputRequest(sc)) {
-                        case 2 -> {
-                            System.out.println("--------Цифровая сортировка--------");
-                            Lab_3_2.start();
-                        }
-                        case 3 -> {
-                            System.out.println("--------Сохранение обобщения--------");
-                            Lab_3_3.start();
-                        }
-                        case 0 -> {}
-                        default -> System.out.println("Неверный ввод");
+                switch (InputRequest(sc)) {
+                    case 1 -> {
+                        IO.println("--------Сортировка подсчетом--------");
+                        Lab_3_1.start();
                     }
-                }
-
-                case 4 -> {
-                    System.out.print("""
-                            --------Поиск минимумов--------
-                            1. Стек минимумов
-                            2. Очередь с приоритетом на основе Кучи
-                            0. В главное меню
-                            """);
-                    switch (InputRequest(sc)) {
-                        case 1 -> {
-                            System.out.println("--------Стек минимумов--------");
-                            Lab_4_1.start();
-                        }
-                        case 2 -> {
-                            System.out.println("--------Очередь с приоритетом на основе Кучи--------");
-                            Lab_4_2.start();
-                        }
-                        case 0 -> {}
-                        default -> System.out.println("Неверный ввод");
+                    case 2 -> {
+                        IO.println("--------Цифровая сортировка--------");
+                        Lab_3_2.start();
                     }
+                    case 3 -> {
+                        IO.println("--------Сохранение обобщения--------");
+                        Lab_3_3.start();
+                    }
+                    case 0 -> {
+                    }
+                    default -> IO.println("Неверный ввод");
                 }
+            }
 
-                case 6 -> {
-                    System.out.print("""
+            case 4 -> {
+                IO.print("""
+                        --------Поиск минимумов--------
+                        1. Стек минимумов
+                        2. Очередь с приоритетом на основе Кучи
+                        0. В главное меню
+                        """);
+                switch (InputRequest(sc)) {
+                    case 1 -> {
+                        IO.println("--------Стек минимумов--------");
+                        Lab_4_1.start();
+                    }
+                    case 2 -> {
+                        IO.println("--------Очередь с приоритетом на основе Кучи--------");
+                        Lab_4_2.start();
+                    }
+                    case 0 -> {
+                    }
+                    default -> IO.println("Неверный ввод");
+                }
+            }
+
+            case 6 -> {
+                IO.print("""
                         --------Бинарный поиск--------
                         1. Приближенный поиск
                         2. Дипломы
                         3. Решение уравнения
                         0. В главное меню
                         """);
-                    switch (InputRequest()) {
-                        case 1 -> {
-                            System.out.println("--------Приближенный поиск--------");
-                            Lab_6_1.start();
-                        }
-                        case 2 -> {
-                            System.out.println("--------Сохранение обобщения--------");
-                            Lab_6_2.start();
-                        }
-                        case 3 -> {
-                            System.out.println("--------Решение уравнения--------");
-                            Lab_6_3.start();
-                        }
-                        case 0 -> {}
-                        default -> System.out.println("Неверный ввод");
+                switch (InputRequest(sc)) {
+                    case 1 -> {
+                        IO.println("--------Приближенный поиск--------");
+                        Lab_6_1.start();
                     }
+                    case 2 -> {
+                        IO.println("--------Сохранение обобщения--------");
+                        Lab_6_2.start();
+                    }
+                    case 3 -> {
+                        IO.println("--------Решение уравнения--------");
+                        Lab_6_3.start();
+                    }
+                    case 0 -> {
+                    }
+                    default -> IO.println("Неверный ввод");
                 }
+            }
 
-                case 7 -> {
-                    System.out.print("""
+            case 7 -> {
+                IO.print("""
                         --------Динамическое программирование--------
                         1. Рогалик
                         2. Наибольшая возрастающая подпоследовательность (НВП)
                         3. Наибольшая общая подпоследовательность (НОП)
                         0. В главное меню
                         """);
-                    switch (InputRequest()) {
-                        case 1 -> {
-                            System.out.println("--------Рогалик--------");
-                            Lab_7_1.start();
-                        }
-                        case 2 -> {
-                            System.out.println("--------Наибольшая возрастающая подпоследовательность (НВП)--------");
-                            Lab_7_2.start();
-                        }
-                        case 3 -> {
-                            System.out.println("--------Наибольшая общая подпоследовательность (НОП)--------");
-                            Lab_7_3.start();
-                        }
-                        case 0 -> {}
-                        default -> System.out.println("Неверный ввод");
+                switch (InputRequest(sc)) {
+                    case 1 -> {
+                        IO.println("--------Рогалик--------");
+                        Lab_7_1.start();
                     }
+                    case 2 -> {
+                        IO.println("--------Наибольшая возрастающая подпоследовательность (НВП)--------");
+                        Lab_7_2.start();
+                    }
+                    case 3 -> {
+                        IO.println("--------Наибольшая общая подпоследовательность (НОП)--------");
+                        Lab_7_3.start();
+                    }
+                    case 0 -> {
+                    }
+                    default -> IO.println("Неверный ввод");
                 }
-
-                case 0 -> choice = 0;
-                default -> System.out.println("Неверный ввод");
             }
-        } while (choice!=0);
-    }
 
-    public static int InputRequest(Scanner sc) {
-        System.out.print("Выберите пункт: ");
-        return sc.nextInt();
-    }
+            case 0 -> choice = 0;
+            default -> IO.println("Неверный ввод");
+        }
+    } while (choice != 0);
+}
+
+public static int InputRequest(Scanner sc) {
+    IO.print("Выберите пункт: ");
+    return sc.nextInt();
 }

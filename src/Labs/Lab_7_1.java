@@ -41,7 +41,7 @@ public class Lab_7_1 {
                 moneyTable[i][0] = moneyTable[i - 1][0] + grid[i][0];
             }
 
-            // Небазовые случаи
+            // Не базовые случаи
             for (int i = 1; i < h; i++) {
                 for (int j = 1; j < w; j++) { //               Ячейка сверху           Ячейка слева
                     moneyTable[i][j] = grid[i][j] + Math.max(moneyTable[i - 1][j], moneyTable[i][j - 1]);

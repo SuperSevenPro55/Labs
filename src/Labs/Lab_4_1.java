@@ -44,7 +44,7 @@ public class Lab_4_1 {
                 }
             }
             System.out.println("Вывод: ");
-            System.out.println(sb.toString());
+            System.out.println(sb);
         } catch (IOException err) {
             throw new RuntimeException(err);
         }

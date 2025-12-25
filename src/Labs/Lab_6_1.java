@@ -23,29 +23,34 @@ public class Lab_6_1 {
         System.out.println("Введите запросы: ");
         for (int i = 0; i < m; i++) {
             int request = sc.nextInt(); // Обрабатываем запросы поочередно
-            int place = binarySearch(arr, request); // Где бы стоял элемент
-            int result;
-
-            if (place == 0) {
-                result = arr[0]; // place меньше всего в массиве - ближайший элемент начальный
-            }
-            else if (place == n) {
-                result = arr[n - 1]; // place больше всех в массиве - ближайший элемент последний
-            }
-            else {
-                int left = arr[place - 1]; // Сосед слева
-                int right = arr[place]; // Сосед справа
-
-                if (right - request < request - left) {
-                    result = right;
-                }
-                else {
-                    result = left;
-                }
-            }
+            int result = getResult(arr, request, n);
             sb.append(result).append(" ");
         }
         System.out.println("Ваши числа: ");
         System.out.println(sb.toString().trim());
+    }
+
+    private static int getResult(int[] arr, int request, int n) {
+        int place = binarySearch(arr, request); // Где бы стоял элемент
+        int result;
+
+        if (place == 0) {
+            result = arr[0]; // place меньше всего в массиве - ближайший элемент начальный
+        }
+        else if (place == n) {
+            result = arr[n - 1]; // place больше всех в массиве - ближайший элемент последний
+        }
+        else {
+            int left = arr[place - 1]; // Сосед слева
+            int right = arr[place]; // Сосед справа
+
+            if (right - request < request - left) {
+                result = right;
+            }
+            else {
+                result = left;
+            }
+        }
+        return result;
     }
 }

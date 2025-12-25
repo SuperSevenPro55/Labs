@@ -1,7 +1,5 @@
 package Labs;
 
-import java.util.Arrays;
-
 public class Lab_1_2 {
     public static void start() {
         Task1_2 cleaner = new Task1_2();
