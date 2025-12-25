@@ -11,6 +11,7 @@ public class Main {
 
     public static void Menu() throws IOException {
         int choice = -1;
+        Scanner sc = new Scanner(System.in);
 
         do {
             System.out.print("""
@@ -21,14 +22,14 @@ public class Main {
                 0. Выход
                 """);
 
-            switch (InputRequest()) {
+            switch (InputRequest(sc)) {
                 case 2 -> {
                     System.out.print("""
                         --------Сортировки--------
                         3. Сортировка структур
                         0. В главное меню
                         """);
-                    switch (InputRequest()) {
+                    switch (InputRequest(sc)) {
                         case 3 -> {
                             System.out.println("--------Сортировка структур--------");
                             Lab_2_3.start();
@@ -45,7 +46,7 @@ public class Main {
                         3. Сохранение обобщения
                         0. В главное меню
                         """);
-                    switch (InputRequest()) {
+                    switch (InputRequest(sc)) {
                         case 2 -> {
                             System.out.println("--------Цифровая сортировка--------");
                             Lab_3_2.start();
@@ -66,14 +67,14 @@ public class Main {
                             2. Очередь с приоритетом на основе Кучи
                             0. В главное меню
                             """);
-                    switch (InputRequest()) {
+                    switch (InputRequest(sc)) {
                         case 1 -> {
                             System.out.println("--------Стек минимумов--------");
                             Lab_4_1.start();
                         }
                         case 2 -> {
                             System.out.println("--------Очередь с приоритетом на основе Кучи--------");
-                            // Lab_4_2.start();
+                            Lab_4_2.start();
                         }
                         case 0 -> {}
                         default -> System.out.println("Неверный ввод");
@@ -86,9 +87,8 @@ public class Main {
         } while (choice!=0);
     }
 
-    public static int InputRequest() {
+    public static int InputRequest(Scanner sc) {
         System.out.print("Выберите пункт: ");
-        Scanner sc = new Scanner(System.in);
         return sc.nextInt();
     }
 }

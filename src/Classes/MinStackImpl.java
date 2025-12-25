@@ -1,6 +1,8 @@
-package MinSearch;
+package Classes;
 
-public class MinStackImpl implements MinStack<Integer>{
+import MinSearch.MinStack;
+
+public class MinStackImpl implements MinStack<Integer> {
     @Override
     public void push(Integer data) { // Положить число в стек
         if (head == null) {
