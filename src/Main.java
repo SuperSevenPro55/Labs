@@ -96,8 +96,7 @@ public class Main {
                         }
                         case 2 -> {
                             System.out.println("--------Сохранение обобщения--------");
-                            //
-                            // Lab_6_2.start();
+                            Lab_6_2.start();
                         }
                         case 0 -> {}
                         default -> System.out.println("Неверный ввод");

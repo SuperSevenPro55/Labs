@@ -2,7 +2,7 @@ package Labs;
 
 import java.util.Arrays;
 import java.util.Scanner;
-import static BinSearch.BinarySearch.binarySearch;
+import static Classes.BinarySearch.binarySearch;
 
 public class Lab_6_1 {
     public static void start() {
